@@ -1,3 +1,4 @@
+import { TemplatesService } from './templates/templates.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -18,7 +19,7 @@ import { TemplatesComponent } from './templates/templates.component';
     AppRoutingModule,
     CursosModule
   ],
-  providers: [],
+  providers: [TemplatesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

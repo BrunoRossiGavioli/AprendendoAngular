@@ -1,3 +1,4 @@
+import { TemplatesService } from './templates.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,11 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TemplatesComponent implements OnInit {
 
-  NomeFuncionario: string = 'Gilberto';
+  NomeFuncionario: string;
 
-  funcionarios: string[] = ['Gilberto','Monica','Gustavo','Janaina','Vinicius']
+  funcionarios: string[];
 
-  constructor() { }
+  constructor(private templateservice: TemplatesService) {
+
+    this.NomeFuncionario = this.templateservice.GetFuncionario();
+
+    this.funcionarios = this.templateservice.GetFuncionarios();
+
+  }
 
   ngOnInit(): void {
   }
