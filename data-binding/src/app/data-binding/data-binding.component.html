@@ -1,7 +1,7 @@
-<section class="property-binding">
+<section class="property-binding container" style="margin-top: 30px; margin-bottom: 50px;">
 
   <article>
-    <h3>Interpolation / Interpolação</h3>
+    <h3>1- Interpolation / Interpolação</h3>
     <p>String renderizada com interpolação: {{ url }}</p>
     <p>Resultado de 1+1 é: {{ 1+1 }}</p>
     <p>Resultado de 1+1 não é: {{ 1+1+GetValor() }}</p>
@@ -10,11 +10,34 @@
   </article>
 
   <article>
-    <h3>Proprety-binding</h3>
+    <h3>2- Proprety-binding</h3>
     <img src="{{ urlimg }}">
-    <p>
     <img [src]="urlimg">
-    <p>
     <img bind-src="urlimg">
   </article>
+
+<br><br><br>
+
+  <article>
+    <h3>3- Proprety-class</h3>
+    <h5>3.1- Class-Binding</h5>
+    <select #opt (change)='0'>
+      <option value="alert-success">Sucesso</option>
+      <option value="alert-info">Info</option>
+      <option value="alert-warning">Aviso</option>
+      <option value="alert-danger">Erro</option>
+    </select>
+    <br><br>
+    <div class="alert {{opt.value}}">Cor muda de acordo com o select</div>
+    <br>
+    <div class="alert" role="alert" [class.alert-success]="opt.value == 'alert-success'">SUCESSO</div>
+    <div class="alert" role="alert" [class.alert-info]="opt.value == 'alert-info'">INFO</div>
+    <div class="alert" role="alert" [class.alert-warning]="opt.value == 'alert-warning'">AVISO</div>
+    <div class="alert" role="alert" [class.alert-danger]="opt.value == 'alert-danger'">ERRO</div>
+    <div [style.display]="opt.value == 'alert-danger' ? 'block' : 'none'">
+      <h5>3.2- Style-Binding</h5>
+      <div class="alert alert-danger" role="alert">APARECE APENAS QUANDO OPT.VALUE É IGUAL A DANGER</div>
+    </div>
+  </article>
 </section>
+
