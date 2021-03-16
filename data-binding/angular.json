@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "data-biding": {
+    "data-binding": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/data-biding",
+            "outputPath": "dist/data-binding",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -61,18 +61,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "data-biding:build"
+            "browserTarget": "data-binding:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "data-biding:build:production"
+              "browserTarget": "data-binding:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "data-biding:build"
+            "browserTarget": "data-binding:build"
           }
         },
         "test": {
@@ -109,16 +109,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "data-biding:serve"
+            "devServerTarget": "data-binding:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "data-biding:serve:production"
+              "devServerTarget": "data-binding:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "data-biding"
+  "defaultProject": "data-binding"
 }

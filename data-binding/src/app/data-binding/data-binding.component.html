@@ -65,5 +65,21 @@
     >Passe o mouse sobre mim</p>
 
   </article>
+
+  <article>
+    <h3>TWO-AWAY DATA BINDING</h3>
+    <label>Modo 1: </label>
+    <input type="text" [value]="nome" (input)="nome = $event.target.value">
+    <label>Nome: {{nome}}</label>
+    <br>
+    <label>Modo 2: </label>
+    <input type="text" [ngModel]="nome2" (ngModelChange)="nome2 = $event">
+    <label>Nome: {{nome2}}</label>
+    <br>
+    <label>Modo 3: </label>
+    <input type="text" [(ngModel)]="nome3">
+    <label>Nome: {{nome3}}</label>
+
+  </article>
 </section>
 

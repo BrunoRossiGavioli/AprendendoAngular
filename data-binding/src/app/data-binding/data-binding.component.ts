@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-data-binding',
@@ -13,6 +13,9 @@ export class DataBindingComponent implements OnInit {
   valorAtual: string;
   valorSalvo: string;
   isMouseOver: boolean = false;
+  nome: string = "abc";
+  nome2: string = "abc";
+  nome3: string = "abc";
 
   meClique(){
     alert('Obrigado por clicar em mim!');
