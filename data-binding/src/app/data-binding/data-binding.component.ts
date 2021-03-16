@@ -10,8 +10,26 @@ export class DataBindingComponent implements OnInit {
   url: string = 'http://youtube.com'
   urlimg: string = 'http://lorempixel.com.br/225/225/?2'
   CursoAn: boolean = true;
+  valorAtual: string;
+  valorSalvo: string;
+  isMouseOver: boolean = false;
 
-  constructor() { }
+  meClique(){
+    alert('Obrigado por clicar em mim!');
+    console.log('banana');
+  }
+
+  onKeyUp(evento: KeyboardEvent){
+    this.valorAtual = (<HTMLInputElement>evento.target).value;
+  }
+
+  onKeyOut(valor){
+    this.valorSalvo = valor;
+  }
+
+  onMouse(){
+    this.isMouseOver = !this.isMouseOver;
+  }
 
   GetValor(){
     return 1;
@@ -20,6 +38,8 @@ export class DataBindingComponent implements OnInit {
   GetGosto(){
     return true;
   }
+
+  constructor() { }
 
   ngOnInit(): void {
   }

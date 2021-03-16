@@ -39,5 +39,31 @@
       <div class="alert alert-danger" role="alert">APARECE APENAS QUANDO OPT.VALUE É IGUAL A DANGER</div>
     </div>
   </article>
+
+  <article>
+    <h3>EVENT BINDING</h3>
+    <button class="btn btn-outline-success" (click)="meClique()">Clique em mim</button>
+<br><br>
+    <input type="text" #campo
+    (keyup)="onKeyUp($event)"
+    (keyup.enter)="onKeyOut($event.target.value)"
+    (blur)="onKeyOut(campo.value)" ><br>
+    <p>O texto atual é: {{valorAtual}}</p>
+    <p>O texto salvo é: {{valorSalvo}}</p><br>
+
+    <span
+    (mouseover)="onMouse()"
+    (mouseout)="onMouse()"
+    [class.brilho]="isMouseOver"
+    >Passe o mouse sobre mim</span>
+    <br><br>
+    <!--Diferença entre Paragrafo e Span-->
+    <p
+    (mouseover)="onMouse()"
+    (mouseout)="onMouse()"
+    [class.brilho]="isMouseOver"
+    >Passe o mouse sobre mim</p>
+
+  </article>
 </section>
 
